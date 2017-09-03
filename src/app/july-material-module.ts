@@ -32,6 +32,7 @@ import {
   MdToolbarModule,
   MdTooltipModule,
   StyleModule,
+  MdFormFieldModule,
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
@@ -50,7 +51,7 @@ import { CdkTableModule } from '@angular/cdk/table';
     MdDatepickerModule,
     MdDialogModule,
     MdExpansionModule,
-    // MdFormFieldModule,
+    MdFormFieldModule,
     MdGridListModule,
     MdIconModule,
     MdInputModule,

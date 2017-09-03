@@ -34,12 +34,17 @@ export class Home {}
 @Component({
   moduleId: module.id,
   selector: 'july-app',
-  templateUrl: 'app.html',
-  styleUrls: []
+  templateUrl: './app.html',
+  styleUrls: ['./july-app.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class JulyApp {
   dark = false;
   navItems = [
+    {
+      route: '/autocomplete',
+      name: '自动完成表单'
+    }
   ];
 
   constructor(
@@ -49,7 +54,16 @@ export class JulyApp {
   ) {}
 
   toggleFullScreen() {
-    
+    let elem = this._element.nativeElement.querySelector('.demo-content');
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    } else if (elem.mozRequestFullscreen) {
+      elem.mozRequestFullscreen();
+    }
   }
 
   toggleTheme() {

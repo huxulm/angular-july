@@ -22,6 +22,9 @@ import {AppModule} from './app/app.module';
   entryComponents: [
     EntryApp,
   ],
+  bootstrap: [
+    EntryApp
+  ]
 })
 export class JulyAppModule {
   constructor(private _appRef: ApplicationRef) { }

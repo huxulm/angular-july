@@ -6,6 +6,8 @@ import { JulyMaterialModule } from './july-material-module';
 import { ALL_ROUTES } from './router/routes';
 
 import { EntryApp, Home, JulyApp } from './app';
+import { AutocompleteDemo } from './autocomplete/autocomplete-demo';
+
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
 
 @NgModule({
@@ -19,6 +21,7 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
   declarations: [
     JulyApp,
     Home,
+    AutocompleteDemo
   ],
   providers: [
     {
