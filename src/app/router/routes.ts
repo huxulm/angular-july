@@ -4,6 +4,7 @@
 import {Routes} from '@angular/router';
 import { JulyApp, Home } from '../app';
 import { AutocompleteDemo } from '../autocomplete/autocomplete-demo';
+import { BaseLineDemo } from '../baseline/baseline-demo';
 
 export const ALL_ROUTES: Routes = [
   {
@@ -18,6 +19,9 @@ export const ALL_ROUTES: Routes = [
       },
       {
         path: 'autocomplete', component: AutocompleteDemo
+      },
+      {
+        path: 'baseline', component: BaseLineDemo 
       }
     ]
   }

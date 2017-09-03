@@ -7,6 +7,7 @@ import { ALL_ROUTES } from './router/routes';
 
 import { EntryApp, Home, JulyApp } from './app';
 import { AutocompleteDemo } from './autocomplete/autocomplete-demo';
+import { BaseLineDemo } from './baseline/baseline-demo';
 
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
 
@@ -21,7 +22,8 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
   declarations: [
     JulyApp,
     Home,
-    AutocompleteDemo
+    AutocompleteDemo,
+    BaseLineDemo,
   ],
   providers: [
     {

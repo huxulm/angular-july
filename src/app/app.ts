@@ -43,7 +43,11 @@ export class JulyApp {
   navItems = [
     {
       route: '/autocomplete',
-      name: '自动完成表单'
+      name: 'AutoComplete'
+    },
+    {
+      route: '/baseline',
+      name: 'BaseLine'
     }
   ];
 
