@@ -22,7 +22,17 @@ body {
   .demo-content {
     padding: 32px;
     box-sizing: border-box;
-    background: #1971ff;
+  }
+
+  .mat-option {
+    line-height: 32px;
+    height: 32px;
+  }
+
+  @media(max-device-width: 480px) {
+    .demo-content {
+      padding: .1rem;
+    }
   }
 
   .mat-toolbar {
