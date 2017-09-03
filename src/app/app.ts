@@ -48,6 +48,10 @@ export class JulyApp {
     {
       route: '/baseline',
       name: 'BaseLine'
+    },
+    {
+      route: '/button',
+      name: 'Button',
     }
   ];
 

@@ -5,6 +5,7 @@ import {Routes} from '@angular/router';
 import { JulyApp, Home } from '../app';
 import { AutocompleteDemo } from '../autocomplete/autocomplete-demo';
 import { BaseLineDemo } from '../baseline/baseline-demo';
+import { ButtonDemo } from '../button/button-demo';
 
 export const ALL_ROUTES: Routes = [
   {
@@ -15,13 +16,13 @@ export const ALL_ROUTES: Routes = [
         path: '', component: Home
       },
       {
-        path: 'button', component: Home
+        path: 'button', component: ButtonDemo
       },
       {
         path: 'autocomplete', component: AutocompleteDemo
       },
       {
-        path: 'baseline', component: BaseLineDemo 
+        path: 'baseline', component: BaseLineDemo
       }
     ]
   }
