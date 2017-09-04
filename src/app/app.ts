@@ -52,6 +52,10 @@ export class JulyApp {
     {
       route: '/button',
       name: 'Button',
+    },
+    {
+      route: '/button-toggle',
+      name: 'Button-Toggle'
     }
   ];
 

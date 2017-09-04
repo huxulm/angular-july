@@ -9,6 +9,7 @@ import { EntryApp, Home, JulyApp } from './app';
 import { AutocompleteDemo } from './autocomplete/autocomplete-demo';
 import { BaseLineDemo } from './baseline/baseline-demo';
 import { ButtonDemo } from './button/button-demo';
+import { ButtonToggleDemo } from './button-toggle/button-toogle-demo';
 
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
 
@@ -26,6 +27,7 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
     AutocompleteDemo,
     BaseLineDemo,
     ButtonDemo,
+    ButtonToggleDemo
   ],
   providers: [
     {
