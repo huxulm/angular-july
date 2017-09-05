@@ -7,10 +7,11 @@ import { AutocompleteDemo } from '../autocomplete/autocomplete-demo';
 import { BaseLineDemo } from '../baseline/baseline-demo';
 import { ButtonDemo } from '../button/button-demo';
 import { ButtonToggleDemo } from '../button-toggle/button-toogle-demo';
+import { RippleDemo } from '../ripple/ripple-demo';
 
 export const ALL_ROUTES: Routes = [
   {
-    path: '',
+    path: 'angular-july',
     component: JulyApp,
     children:[
       {
@@ -27,6 +28,9 @@ export const ALL_ROUTES: Routes = [
       },
       {
         path: 'button-toggle', component: ButtonToggleDemo
+      },
+      {
+        path: 'ripple', component: RippleDemo
       }
     ]
   }

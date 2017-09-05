@@ -1,0 +1,28 @@
+.demo-ripple {
+  button, a {
+    text-transform: uppercase;
+    margin: 8px;
+  }
+
+  .demo-ripple-checkbox-option {
+    margin: 10px 0;
+  }
+
+  .demo-ripple-container {
+    box-shadow: rgba(0, 0, 0, 0.118) 0 10px 15px, rgba(0, 0, 0, 0.239) 0 5px 10px;
+    cursor: pointer;
+    font-size: 24px;
+    height: 150px;
+    position: relative;
+    text-align: center;
+    transition: all 200ms linear;
+    line-height: 480px;
+    width: 480px;
+
+    &.demo-ripple-disabled {
+      color: rgba(32, 32, 32, 0.4);
+    }
+
+
+  }
+}

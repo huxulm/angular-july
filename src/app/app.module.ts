@@ -10,6 +10,7 @@ import { AutocompleteDemo } from './autocomplete/autocomplete-demo';
 import { BaseLineDemo } from './baseline/baseline-demo';
 import { ButtonDemo } from './button/button-demo';
 import { ButtonToggleDemo } from './button-toggle/button-toogle-demo';
+import { RippleDemo } from './ripple/ripple-demo';
 
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
 
@@ -27,7 +28,8 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
     AutocompleteDemo,
     BaseLineDemo,
     ButtonDemo,
-    ButtonToggleDemo
+    ButtonToggleDemo,
+    RippleDemo
   ],
   providers: [
     {

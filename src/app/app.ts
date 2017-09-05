@@ -31,6 +31,8 @@ export class EntryApp {}
 })
 export class Home {}
 
+export const BASE_APP_PATH: string = '/angular-july';
+
 @Component({
   moduleId: module.id,
   selector: 'july-app',
@@ -56,6 +58,10 @@ export class JulyApp {
     {
       route: '/button-toggle',
       name: 'Button-Toggle'
+    },
+    {
+      route: '/ripple',
+      name: 'Ripple'
     }
   ];
 
@@ -63,7 +69,11 @@ export class JulyApp {
     private _element: ElementRef,
     private _renderer: Renderer2,
     private _overlayContainer: OverlayContainer
-  ) {}
+  ) {
+    this.navItems.map((item => {
+      return item.route = BASE_APP_PATH + item.route;
+    }));
+  }
 
   toggleFullScreen() {
     let elem = this._element.nativeElement.querySelector('.demo-content');
