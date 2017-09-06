@@ -89,7 +89,17 @@ export class JulyApp {
   }
 
   toggleTheme() {
+    const darkThemeClass = 'unicorn-dark-theme';
 
+    this.dark = !this.dark;
+
+    if (this.dark) {
+      this._renderer.addClass(this._element.nativeElement, darkThemeClass);
+      this._overlayContainer.themeClass = darkThemeClass;
+    } else {
+      this._renderer.removeClass(this._element.nativeElement, darkThemeClass);
+      this._overlayContainer.themeClass = '';
+    }
   }
 }
 
