@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     selector: 'button-toggle-demo',
     templateUrl: 'button-toggle-demo.html',
+    styleUrls: ['button-toggle-demo.scss']
   }
 )
 export class ButtonToggleDemo {
