@@ -8,6 +8,8 @@ import { BaseLineDemo } from '../baseline/baseline-demo';
 import { ButtonDemo } from '../button/button-demo';
 import { ButtonToggleDemo } from '../button-toggle/button-toogle-demo';
 import { RippleDemo } from '../ripple/ripple-demo';
+import { TabsDemo } from '../tabs/tabs-demo';
+import { TABS_DEMO_ROUTES } from '../tabs/routes';
 
 export const ALL_ROUTES: Routes = [
   {
@@ -31,6 +33,9 @@ export const ALL_ROUTES: Routes = [
       },
       {
         path: 'ripple', component: RippleDemo
+      },
+      {
+        path: 'tabs', component: TabsDemo, children: TABS_DEMO_ROUTES
       }
     ]
   }

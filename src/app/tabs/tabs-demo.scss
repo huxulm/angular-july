@@ -1,0 +1,21 @@
+.demo-nav-bar {
+  border: 1px solid #e8e8e8;
+  margin-bottom: 40px;
+
+  & .unicorn-dark-theme {
+    border-color: #464646;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.demo-nav-bar {
+  sunny-tab-demo,
+  rainy-tab-demo,
+  foggy-tab-demo {
+    display: block;
+    padding: 12px;
+  }
+}

@@ -11,6 +11,7 @@ import { BaseLineDemo } from './baseline/baseline-demo';
 import { ButtonDemo } from './button/button-demo';
 import { ButtonToggleDemo } from './button-toggle/button-toogle-demo';
 import { RippleDemo } from './ripple/ripple-demo';
+import { TabsDemo, SunnyTabDemo, RainyTabDemo, FoggyTabDemo } from './tabs/tabs-demo';
 
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
 
@@ -29,7 +30,11 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
     BaseLineDemo,
     ButtonDemo,
     ButtonToggleDemo,
-    RippleDemo
+    RippleDemo,
+    TabsDemo,
+    SunnyTabDemo,
+    RainyTabDemo,
+    FoggyTabDemo
   ],
   providers: [
     {

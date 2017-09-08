@@ -62,8 +62,14 @@ export class JulyApp {
     {
       route: '/ripple',
       name: 'Ripple'
+    },
+    {
+      route: '/tabs',
+      name: 'Tab'
     }
   ];
+
+  gitRepoUrl = 'https://github.com/jackdon/angular-july.git';
 
   constructor(
     private _element: ElementRef,

@@ -1,0 +1,20 @@
+<h1>Tab Nav Bar</h1>
+
+<button md-raised-button (click)="tabLinks.shift()">Remove Tab</button>
+<button md-raised-button (click)="swapTabLinks()">Swap Tab</button>
+
+<div class="demo-nav-bar">
+
+  <nav md-tab-nav-bar="" [backgroundColor]="tabNavBackground">
+    <a md-tab-link
+       *ngFor="let tabLink of tabLinks; let i = index"
+       [routerLink]="tabLink.link"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive"
+    >
+      {{tabLink.label}}
+    </a>
+    <a md-tab-link disabled>Disabled Link</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

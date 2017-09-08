@@ -33,6 +33,21 @@ body {
     .demo-content {
       padding: .1rem;
     }
+
+    .demo-toolbar {
+
+      .july-title {
+        position: relative;
+        width: 75%;
+        padding: 0 5px;
+        margin: 0 auto;
+        overflow: hidden;
+        font-size: 14px;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
   }
 
   .mat-toolbar {
@@ -51,6 +66,12 @@ body {
   h1 {
     font-size: 20px;
   }
+
+  .gh-icon {
+    line-height: 40px;
+    align-items: center;
+    color: #fff;
+  }
 }
 
 // stretch to screen size in fullscreen mode
@@ -59,3 +80,5 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
+
+@import url("https://assets-cdn.github.com/assets/frameworks-bedfc518345498ab3204d330c1727cde7e733526a09cd7df6867f6a231565091.css");
