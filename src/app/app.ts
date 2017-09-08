@@ -46,6 +46,10 @@ export class JulyApp {
   dark = false;
   navItems = [
     {
+      route: '',
+      name: 'Home'
+    },
+    {
       route: '/autocomplete',
       name: 'AutoComplete'
     },
