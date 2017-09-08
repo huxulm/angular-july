@@ -24,10 +24,12 @@ export class EntryApp {}
  */
 @Component({
   selector: 'home',
-  template: `
+  /*template: `
     <p>Welcome to the development demos for Angular Material!</p>
     <p>Open the sidenav to select a demo.</p>
-  `
+  `*/
+  templateUrl: './home/home.html',
+  styleUrls: ['./home/home.scss']
 })
 export class Home {}
 
