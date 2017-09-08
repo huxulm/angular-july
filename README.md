@@ -2,9 +2,12 @@
 
 Live demo: [angular-july](http://learning.xulingming.cn/angular-july)
 
-## Development server
+## Pre requirements
+- [Nodejs & npm](https://nodejs.org/en/)
+- [Angular CLI](https://github.com/angular/angular-cli/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development server
+Run `npm install` to install all needed dependencies. And then, run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
