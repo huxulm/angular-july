@@ -2,6 +2,8 @@
 
 <button md-raised-button (click)="tabLinks.shift()">Remove Tab</button>
 <button md-raised-button (click)="swapTabLinks()">Swap Tab</button>
+<button md-raised-button (click)="addToLabel()">Add To Tab</button>
+<button md-raised-button (click)="changeRipple()">Change Ripple</button>
 
 <div class="demo-nav-bar">
 
@@ -17,4 +19,77 @@
     <a md-tab-link disabled>Disabled Link</a>
   </nav>
   <router-outlet></router-outlet>
+</div>
+
+
+<h1>Dynamic Tab Nav Bar</h1>
+<div>
+  Selected tab index:
+  <md-form-field>
+    <input mdInput type="number" [(ngModel)]="activeTabIndex">
+  </md-form-field>
+</div>
+
+<div class="demo-nav-bar">
+
+  <md-card>
+    <md-card-title>Add New Tab</md-card-title>
+    <md-card-content>
+      <md-checkbox [(ngModel)]="createWithLongContent">
+        Include extra content
+      </md-checkbox>
+      <md-checkbox [(ngModel)]="gotoNewTabAfterAdding">
+        Select after adding
+      </md-checkbox>
+      <div>
+        Position:
+        <md-form-field>
+          <input mdInput type="number" [(ngModel)]="addTabPosition">
+        </md-form-field>
+      </div>
+      <button md-raised-button color="primary"
+              (click)="addTab(createWithLongContent)">
+        Add
+      </button>
+    </md-card-content>
+  </md-card>
+
+  <md-tab-group [(selectedIndex)]="activeTabIndex">
+    <md-tab *ngFor="let tabLink of dynamicTabs">
+      <ng-template md-tab-label>{{tabLink.label}}</ng-template>
+      <div class="tab-content">
+        {{tabLink.content}}
+        <br>
+        <br>
+        <div *ngIf="tabLink.extractContent">
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+          中华人民共和国万岁 世界人民大团结万岁
+        </div>
+        <br>
+        <br>
+        <md-form-field>
+          <input mdInput placeholder="Tab Label" [(ngModel)]="tabLink.label">
+        </md-form-field>
+        <br><br>
+        <button md-raised-button
+                [disabled]="dynamicTabs.length == 1"
+                (click)="deleteTab(tabLink)">
+          Delete Tab
+        </button>
+      </div>
+    </md-tab>
+  </md-tab-group>
 </div>
