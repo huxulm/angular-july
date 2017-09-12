@@ -1,0 +1,24 @@
+<div>
+  <div>
+    <button md-raised-button (click)="connect()">Connect New Data Source</button>
+  </div>
+  <div>
+    <button md-raised-button (click)="_peopleDatabase.shuffle(changeReferences)">Randomize Data</button>
+  </div>
+  <div class="demo-track-by-select">
+    <div class="demo-track-by-label">Track By</div>
+    <md-radio-group [(ngModel)]="trackByStrategy">
+      <md-radio-button [value]="'reference'">Reference</md-radio-button>
+      <md-radio-button [value]="'id'">ID</md-radio-button>
+      <md-radio-button [value]="'index'">Index</md-radio-button>
+    </md-radio-group>
+  </div>
+</div>
+
+<md-card class="demo-table-card">
+  <h3>CdkTable With Dynamic Column Ref</h3>
+  <cdk-table [dataSource]="dataSource">
+    <ng-container></ng-container>
+  </cdk-table>
+</md-card>
+

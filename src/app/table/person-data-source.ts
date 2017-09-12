@@ -8,7 +8,7 @@ import { PeopleDatabase, UserData } from './people-database';
 import 'rxjs/add/observable/merge';
 import 'rxjs/operator/map';
 
-export class PeopleDataSource extends DataSource<any> {
+export class PersonDataSource extends DataSource<any> {
 
   constructor(
     private _peopleDatabase: PeopleDatabase,
@@ -24,11 +24,39 @@ export class PeopleDataSource extends DataSource<any> {
       this._sort.mdSortChange,
       this._peopleDatabase.dataChange
     ];
-    return null;
+
+    return Observable.merge(...displayDataChanges).map(() => {
+      const data = this.getSortedData();
+      
+      // Grab the page's slice of data
+      const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
+      return data.splice(startIndex, this._paginator.pageSize);
+    });
   }
 
   disconnect():void {
     // no op
+  }
+
+  getSortedData(): UserData[] {
+    const data = this._peopleDatabase.data.slice();
+    if (!this._sort.active || this._sort.direction == '') { return data }
+
+    return data.sort((a, b) => {
+      let propertyA: number|string = '';
+      let propertyB: number|string = '';
+
+      switch (this._sort.active) {
+        case 'userId': [propertyA, propertyB] = [a.id, b.id]; break;
+        case 'userName': [propertyA, propertyB] = [a.id, b.id]; break;
+        case 'progress': [propertyA, propertyB] = [a.id, b.id]; break;
+        case 'color': [propertyA, propertyB] = [a.id, b.id]; break;
+      }
+
+      let valueA = isNaN(+propertyA)? propertyA: +propertyA;
+      let valueB = isNaN(+propertyB)? propertyB: +propertyB;
+      return (valueA < valueB? -1 : 1) * (this._sort.direction == 'asc'? 1 : -1);
+    })
   }
 
 }
