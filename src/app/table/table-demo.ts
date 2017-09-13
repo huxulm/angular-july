@@ -71,6 +71,12 @@ export class TableDemo implements OnInit {
 
 
   ngOnInit():void {
+    this._paginator._intl.previousPageLabel = '上一页';
+    this._paginator._intl.itemsPerPageLabel = '每页';
+    this._paginator._intl.nextPageLabel = '下一页';
+    this._paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number) => {
+      return '第' + (page * pageSize - page) + '-' + (pageSize * (page + 1)) + ', 总页数: ' + (length / pageSize);
+    }
     this.connect();
   }
 
