@@ -72,6 +72,10 @@ export class JulyApp {
     {
       route: '/tabs',
       name: 'Tab'
+    },
+    {
+      route: '/table',
+      name: 'Table'
     }
   ];
 

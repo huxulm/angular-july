@@ -1,0 +1,32 @@
+.demo-table-card {
+  margin: 24px 0;
+  max-height: 200px;
+  overflow: auto;
+
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/** Styles so that the CDK Table columns have width and font size. */
+.cdk-table {
+  font-size: 12px;
+
+  .cdk-row, .cdk-header-row {
+    display: flex;
+  }
+
+  .cdk-cell, .cdk-header-cell {
+    flex: 1;
+  }
+
+  .cdk-header-cell {
+    font-weight: bold;
+
+    &.mat-sort-header-sorted {
+      color: black;
+    }
+  }
+}

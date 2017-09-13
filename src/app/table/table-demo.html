@@ -17,8 +17,87 @@
 
 <md-card class="demo-table-card">
   <h3>CdkTable With Dynamic Column Ref</h3>
-  <cdk-table [dataSource]="dataSource">
-    <ng-container></ng-container>
+  <div>
+    <button md-raised-button (click)="addDynamicColumnDef()" [disabled]="dynamicColumnIds.length >= 4">
+      Add Column Defs
+    </button>
+    <button md-raised-button (click)="removeDynamicColumnDef()" [disabled]="dynamicColumnIds.length == 0">Remove Column Defs</button>
+  </div>
+  <cdk-table [dataSource]="dataSource" mdSort>
+    <ng-container [cdkColumnDef]="column.id" *ngFor="let column of dynamicColumnDefs">
+      <cdk-header-cell *cdkHeaderCellDef> {{column.headerText}} </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row"> {{row[column.property]}} </cdk-cell>
+    </ng-container>
+    <cdk-header-row *cdkHeaderRowDef="dynamicColumnIds"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: dynamicColumnIds;"></cdk-row>
   </cdk-table>
 </md-card>
 
+<md-card class="demo-table-card">
+  <h3>Cdk Table Example</h3>
+  <div>
+    Highlight:
+    <md-checkbox>First Row</md-checkbox>
+    <md-checkbox>Last Row</md-checkbox>
+    <md-checkbox>Even Rows</md-checkbox>
+    <md-checkbox>Odd Rows</md-checkbox>
+  </div>
+  <cdk-table #table mdSort
+             [dataSource]="dataSource"
+             [trackBy]="userTrackBy">
+
+    <!-- Column Definition: ID -->
+    <ng-container cdkColumnDef="userId">
+      <cdk-header-cell *cdkHeaderCellDef
+                       md-sort-header
+                       arrowPosition="before">
+        ID
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        {{row.id}}
+      </cdk-cell>
+    </ng-container>
+
+    <!-- Column Definition: Progress -->
+    <ng-container cdkColumnDef="progress">
+      <cdk-header-cell *cdkHeaderCellDef
+                       md-sort-header
+                       start="desc">
+        Progress
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <div class="demo-progress-stat">{{row.progress}}</div>
+        <div class="demo-progress-indicator-container">
+          <div class="demo-progress-indicator"
+            [style.background]="row.progress > 50? 'green' : 'red'"
+            [style.opacity]=""
+            [style.width.%]="row.progress"
+          ></div>
+        </div>
+      </cdk-cell>
+    </ng-container>
+
+    <!--  Column Definition: Name -->
+    <ng-container cdkColumnDef="userName">
+      <cdk-header-cell *cdkHeaderCellDef md-sort-header>
+        Name
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">{{row.name}}</cdk-cell>
+    </ng-container>
+
+    <!-- Column Definition: Color -->
+    <ng-container cdkColumnDef="color">
+      <cdk-header-cell *cdkHeaderCellDef md-sort-header disableClear>
+        Color
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row"> {{row.color}} </cdk-cell>
+    </ng-container>
+
+
+  </cdk-table>
+</md-card>
+
+<md-paginator #paginator
+              [length]="_peopleDatabase.data.length"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</md-paginator>

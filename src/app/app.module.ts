@@ -12,6 +12,8 @@ import { ButtonDemo } from './button/button-demo';
 import { ButtonToggleDemo } from './button-toggle/button-toogle-demo';
 import { RippleDemo } from './ripple/ripple-demo';
 import { TabsDemo, SunnyTabDemo, RainyTabDemo, FoggyTabDemo } from './tabs/tabs-demo';
+import { TableDemo } from './table/table-demo';
+import { PeopleDatabase } from './table/people-database';
 
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
 
@@ -34,13 +36,15 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
     TabsDemo,
     SunnyTabDemo,
     RainyTabDemo,
-    FoggyTabDemo
+    FoggyTabDemo,
+    TableDemo
   ],
   providers: [
     {
       provide: OverlayContainer,
-      useClass: FullscreenOverlayContainer
-    }
+      useClass: FullscreenOverlayContainer,
+    },
+    PeopleDatabase
   ],
   entryComponents: [
     JulyApp,
