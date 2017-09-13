@@ -16,7 +16,8 @@ const properties = ['id', 'name', 'progress', 'color'];
     moduleId: module.id,
     selector: 'table-demo',
     templateUrl: 'table-demo.html',
-    styleUrls: ['table-demo.scss']
+    styleUrls: ['table-demo.scss'],
+    encapsulation: ViewEncapsulation.None
   }
 )
 export class TableDemo implements OnInit {
@@ -59,8 +60,18 @@ export class TableDemo implements OnInit {
     }
   }
 
+  getOpacity(progress: number) {
+    let distanceFromMiddle = Math.abs(50 - progress);
+    return distanceFromMiddle / 50 + .3;
+  }
+
+  toggleHighlight(toggle: string, checked: boolean) {
+    checked ? this.highlights.add(toggle) : this.highlights.delete(toggle);
+  }
+
 
   ngOnInit():void {
+    this.connect();
   }
 
   connect(): void {

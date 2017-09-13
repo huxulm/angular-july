@@ -8,6 +8,23 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .demo-highlighter {
+    margin: 0 10px 10px;
+  }
+}
+
+.demo-row-highlight-first {
+  background: #6fff50;
+}
+.demo-row-highlight-last {
+  background: #7cfff2;
+}
+.demo-row-highlight-odd {
+  background: #b980ff;
+}
+.demo-row-highlight-even {
+  background: #ff8364;
 }
 
 /** Styles so that the CDK Table columns have width and font size. */
@@ -28,5 +45,43 @@
     &.mat-sort-header-sorted {
       color: black;
     }
+  }
+  .cdk-header-cell {
+    div {
+      border: 1px black solid;
+      align-content: center;
+      button {
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+        display: inline-block;
+      }
+    }
+    .mat-sort-header-position-before {
+      flex-direction: row;
+    }
+  }
+
+}
+
+/* progress bar style */
+.cdk-column-progress {
+  &.cdk-cell, &.mat-cell {
+    display: flex;
+  }
+
+  .demo-progress-stat {
+    width: 32px;
+    padding-right: 8px;
+  }
+
+  .demo-progress-indicator-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .demo-progress-indicator {
+    height: 9px;
+    border: 1px chocolate solid;
   }
 }

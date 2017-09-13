@@ -23,7 +23,7 @@
     </button>
     <button md-raised-button (click)="removeDynamicColumnDef()" [disabled]="dynamicColumnIds.length == 0">Remove Column Defs</button>
   </div>
-  <cdk-table [dataSource]="dataSource" mdSort>
+  <cdk-table [dataSource]="dataSource">
     <ng-container [cdkColumnDef]="column.id" *ngFor="let column of dynamicColumnDefs">
       <cdk-header-cell *cdkHeaderCellDef> {{column.headerText}} </cdk-header-cell>
       <cdk-cell *cdkCellDef="let row"> {{row[column.property]}} </cdk-cell>
@@ -35,12 +35,12 @@
 
 <md-card class="demo-table-card">
   <h3>Cdk Table Example</h3>
-  <div>
+  <div class="demo-highlighter">
     Highlight:
-    <md-checkbox>First Row</md-checkbox>
-    <md-checkbox>Last Row</md-checkbox>
-    <md-checkbox>Even Rows</md-checkbox>
-    <md-checkbox>Odd Rows</md-checkbox>
+    <md-checkbox (change)="toggleHighlight('first', $event.checked)">First Row</md-checkbox>
+    <md-checkbox (change)="toggleHighlight('last', $event.checked)">Last Row</md-checkbox>
+    <md-checkbox (change)="toggleHighlight('odd', $event.checked)">Even Rows</md-checkbox>
+    <md-checkbox (change)="toggleHighlight('even', $event.checked)">Odd Rows</md-checkbox>
   </div>
   <cdk-table #table mdSort
              [dataSource]="dataSource"
@@ -53,9 +53,7 @@
                        arrowPosition="before">
         ID
       </cdk-header-cell>
-      <cdk-cell *cdkCellDef="let row">
-        {{row.id}}
-      </cdk-cell>
+      <cdk-cell *cdkCellDef="let row"> {{row.id}} </cdk-cell>
     </ng-container>
 
     <!-- Column Definition: Progress -->
@@ -66,12 +64,12 @@
         Progress
       </cdk-header-cell>
       <cdk-cell *cdkCellDef="let row">
-        <div class="demo-progress-stat">{{row.progress}}</div>
+        <div class="demo-progress-stat">{{row.progress}}%</div>
         <div class="demo-progress-indicator-container">
           <div class="demo-progress-indicator"
-            [style.background]="row.progress > 50? 'green' : 'red'"
-            [style.opacity]=""
-            [style.width.%]="row.progress"
+               [style.background]="row.progress > 50 ? 'green' : 'red'"
+               [style.opacity]="getOpacity(row.progress)"
+               [style.width.%]="row.progress"
           ></div>
         </div>
       </cdk-cell>
@@ -82,7 +80,7 @@
       <cdk-header-cell *cdkHeaderCellDef md-sort-header>
         Name
       </cdk-header-cell>
-      <cdk-cell *cdkCellDef="let row">{{row.name}}</cdk-cell>
+      <cdk-cell *cdkCellDef="let row"> {{row.name}} </cdk-cell>
     </ng-container>
 
     <!-- Column Definition: Color -->
@@ -93,7 +91,10 @@
       <cdk-cell *cdkCellDef="let row"> {{row.color}} </cdk-cell>
     </ng-container>
 
-
+    <cdk-header-row *cdkHeaderRowDef="displayColumns"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: displayColumns; let first = first; let last = last; let even = even; let odd = odd"
+             [ngClass]="{'demo-row-highlight-first': highlights.has('first') && first, 'demo-row-highlight-last': highlights.has('last') && last, 'demo-row-highlight-odd': highlights.has('odd') && odd, 'demo-row-highlight-even': highlights.has('even') && even}">
+    </cdk-row>
   </cdk-table>
 </md-card>
 

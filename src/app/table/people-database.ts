@@ -38,10 +38,10 @@ export class PeopleDatabase {
   shuffle(changeReferences: boolean) {
     let copiedData = this.data.slice();
     for (let i = copiedData.length -1; i; i--) {
-      let j = Math.floor(Math.random() * 1);
+      let j = Math.floor(Math.random() * i);
       [copiedData[i - 1], copiedData[j]] = [copiedData[j], copiedData[i - 1]];
     }
-    
+
     if (changeReferences) {
       copiedData = copiedData.map(userData => {
         return {
