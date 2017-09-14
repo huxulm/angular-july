@@ -13,6 +13,8 @@ import { ButtonToggleDemo } from './button-toggle/button-toogle-demo';
 import { RippleDemo } from './ripple/ripple-demo';
 import { TabsDemo, SunnyTabDemo, RainyTabDemo, FoggyTabDemo } from './tabs/tabs-demo';
 import { TableDemo } from './table/table-demo';
+import { ListDemo, GridListDemo, PlainListDemo, ExpansionPanelDemo } from './list/list-demo';
+
 import { PeopleDatabase } from './table/people-database';
 
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material';
@@ -37,7 +39,11 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
     SunnyTabDemo,
     RainyTabDemo,
     FoggyTabDemo,
-    TableDemo
+    TableDemo,
+    ListDemo,
+    PlainListDemo,
+    GridListDemo,
+    ExpansionPanelDemo,
   ],
   providers: [
     {

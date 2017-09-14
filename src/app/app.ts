@@ -70,6 +70,10 @@ export class JulyApp {
       name: 'Ripple'
     },
     {
+      route: '/list',
+      name: 'List',
+    },
+    {
       route: '/tabs',
       name: 'Tab'
     },

@@ -60,6 +60,8 @@ body {
       justify-content: space-between;
       align-items: center;
       width: 100%;
+
+      @import url("https://assets-cdn.github.com/assets/frameworks-bedfc518345498ab3204d330c1727cde7e733526a09cd7df6867f6a231565091.css");
     }
   }
 
@@ -80,5 +82,3 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
-
-@import url("https://assets-cdn.github.com/assets/frameworks-bedfc518345498ab3204d330c1727cde7e733526a09cd7df6867f6a231565091.css");

@@ -1,0 +1,9 @@
+.demo-list {
+  .mat-grid-tile {
+    background: #00ffff;
+  }
+
+  .mat-grid-tile:hover {
+    background: rgba(0, 255, 255, .2);
+  }
+}

@@ -10,7 +10,9 @@ import { ButtonToggleDemo } from '../button-toggle/button-toogle-demo';
 import { RippleDemo } from '../ripple/ripple-demo';
 import { TabsDemo } from '../tabs/tabs-demo';
 import { TableDemo } from '../table/table-demo';
+import { ListDemo } from '../list/list-demo';
 import { TABS_DEMO_ROUTES } from '../tabs/routes';
+import { LIST_DEMO_ROUTES } from '../list/routes';
 
 export const ALL_ROUTES: Routes = [
   {
@@ -40,6 +42,9 @@ export const ALL_ROUTES: Routes = [
       },
       {
         path: 'table', component: TableDemo,
+      },
+      {
+        path: 'list', component: ListDemo, children: LIST_DEMO_ROUTES
       }
     ]
   }
