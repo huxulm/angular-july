@@ -14,6 +14,7 @@ import { RippleDemo } from './ripple/ripple-demo';
 import { TabsDemo, SunnyTabDemo, RainyTabDemo, FoggyTabDemo } from './tabs/tabs-demo';
 import { TableDemo } from './table/table-demo';
 import { ListDemo, GridListDemo, PlainListDemo, ExpansionPanelDemo } from './list/list-demo';
+import { MenuDemo } from './menu/menu-demo';
 
 import { PeopleDatabase } from './table/people-database';
 
@@ -44,6 +45,7 @@ import { OverlayContainer, FullscreenOverlayContainer } from '@angular/material'
     PlainListDemo,
     GridListDemo,
     ExpansionPanelDemo,
+    MenuDemo
   ],
   providers: [
     {

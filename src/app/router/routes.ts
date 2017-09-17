@@ -11,6 +11,8 @@ import { RippleDemo } from '../ripple/ripple-demo';
 import { TabsDemo } from '../tabs/tabs-demo';
 import { TableDemo } from '../table/table-demo';
 import { ListDemo } from '../list/list-demo';
+import { MenuDemo } from '../menu/menu-demo';
+
 import { TABS_DEMO_ROUTES } from '../tabs/routes';
 import { LIST_DEMO_ROUTES } from '../list/routes';
 
@@ -45,6 +47,9 @@ export const ALL_ROUTES: Routes = [
       },
       {
         path: 'list', component: ListDemo, children: LIST_DEMO_ROUTES
+      },
+      {
+        path: 'menu', component: MenuDemo,
       }
     ]
   }
